@@ -1,0 +1,401 @@
+/*
+TODO: Calendar styling
+*/
+
+.root {
+    -fx-base: rgb(40, 40, 40);
+    -fx-background: rgb(24, 24, 24);
+    /* necessary for TableViews, because of internal redefinition */
+    -fx-background-copy: rgb(24, 24, 24);
+    /*-fx-accent: #c0392b;*/
+    -fx-accent: #2ecc71;
+
+    -fx-control-inner-background: -fx-base;
+    -fx-hover-base: derive(-fx-base, 10%);
+    -fx-pressed-base: -fx-base;
+    -fx-box-border: -fx-color;
+    -fx-text-box-border: -fx-background;
+    -fx-shadow-highlight-color: -fx-color;
+    -fx-outer-border: -fx-color;
+    -fx-inner-border: -fx-color;
+    -fx-body-color: -fx-color, -fx-color;
+    /* if you wanna go down this road find all selection/focus modes
+    -fx-selection-bar: derive(-fx-base, 15%);*/
+
+    -fx-selection-bar-non-focused:-fx-body-color;
+    -fx-cell-focus-inner-border: -fx-accent;
+
+    -fx-default-button: -fx-accent;
+    -fx-focus-color: -fx-color;
+    -fx-faint-focus-color: -fx-color;
+
+    -fx-font-family: Ubuntu, sans-serif;
+    -fx-progress-color: -fx-accent;
+}
+
+/* I wish !important wasn't necessary but it is for some reason. :( */
+
+.scroll-bar {
+    -fx-background-color: transparent !important;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: derive(-fx-body-color, 7%) !important;
+    -fx-background-radius: 1em !important;
+}
+
+.scroll-bar:horizontal > .increment-button,
+.scroll-bar:horizontal > .decrement-button {
+    -fx-background-insets: 0 !important;
+    -fx-padding: 0.5em 0 !important;
+}
+.scroll-bar:vertical > .increment-button,
+.scroll-bar:vertical > .decrement-button {
+    -fx-background-insets: 0 !important;
+    -fx-padding: 0 0.5em !important;
+}
+
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow,
+.scroll-bar:horizontal > .increment-button > .increment-arrow,
+.scroll-bar:vertical > .decrement-button > .decrement-arrow,
+.scroll-bar:vertical > .increment-button > .increment-arrow {
+    -fx-padding: 0 !important;
+    -fx-shape: "" !important;
+}
+
+.scroll-pane,
+.scroll-pane > .viewport,
+.scroll-pane.edge-to-edge,
+.scroll-pane:focused,
+.scroll-pane:fitToWidth:focused,
+.scroll-pane:fitToHeight:focused,
+.tab-pane > * > .scroll-pane,
+.split-pane,
+.list-view,
+.tree-view,
+.table-view,
+.tree-table-view,
+.html-editor {
+    -fx-background-color: transparent;
+}
+
+.table-view,
+.tree-table-view,
+.list-view:focused > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected,
+.tree-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-cell:filled:selected,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell:filled:selected,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected,
+.table-view:focused > .virtual-flow > .clipped-container > .sheet > .table-row-cell .table-cell:selected,
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell .tree-table-cell:selected,
+.list-cell:filled:selected,
+.tree-cell:filled:selected,
+.table-row-cell:filled:selected,
+.tree-table-row-cell:filled:selected,
+.table-row-cell:filled > .table-cell:selected,
+.tree-table-row-cell:filled > .tree-table-cell:selected {
+    -fx-table-cell-border-color: -fx-background-copy;
+}
+
+.table-view .column-header-background,
+.tree-table-view > .column-header-background {
+    -fx-background-color: -fx-background;
+}
+
+.table-view .column-header,
+.tree-table-view .column-header,
+.table-view .filler,
+.tree-table-view .filler,
+.table-view > .column-header-background > .show-hide-columns-button,
+.tree-table-view > .column-header-background > .show-hide-columns-button,
+.table-view:constrained-resize .filler,
+.tree-table-view:constrained-resize .filler {
+    -fx-box-border: -fx-background;
+}
+
+.table-view:constrained-resize > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .table-cell:last-visible,
+.tree-table-view:constrained-resize > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .tree-table-cell:last-visible {
+    -fx-border-color: transparent -fx-table-cell-border-color transparent transparent;
+}
+
+.table-view:constrained-resize .filler,
+.tree-table-view:constrained-resize .filler {
+    -fx-background-color: transparent, transparent, transparent;
+}
+
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .check-box-table-cell > .check-box > .box,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .check-box-table-cell > .check-box > .box {
+    -fx-border-width: 1;
+    -fx-border-color: derive(-fx-base, 10%);
+    -fx-border-radius: 3;
+}
+
+.menu-bar {
+    -fx-background-color: -fx-base;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: derive(-fx-body-color, -25%);
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: -fx-body-color;
+    -fx-background-insets: 0 1 0 0, 1 2 1 1, 2 3 1 2;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-body-color;
+    -fx-border-width: 1;
+}
+
+.progress-indicator > .determinate-indicator > .percentage {
+    -fx-fill: -fx-text-background-color;
+}
+
+.alert.dialog-pane:header .header-panel {
+    -fx-background-color: -fx-base;
+}
+
+.scroll-pane:focused,
+.split-pane:focused,
+.list-view:focused,
+.tree-view:focused,
+.table-view:focused,
+.tree-table-view:focused,
+.html-editor:contains-focus {
+    -fx-background-color: inherit;
+    -fx-background-insets: inherit;
+    -fx-background-radius: inherit;
+}
+
+.split-pane, .scroll-pane {
+    /*-fx-background-color: transparent;*/
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .corner {
+    -fx-opacity: 0;
+    -fx-background-color: transparent;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 1;
+    -fx-background-color: -fx-base;
+    -fx-background-insets: 0;
+}
+
+.toggle-switch .thumb {
+    -fx-background-color: -fx-background, -fx-text-background-color;
+    -fx-background-insets: 0, 1;
+
+    -fx-background-radius: 1em; /* large value to make sure this remains circular */
+    -fx-padding: 1em;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+
+.toggle-switch .thumb-area {
+    -fx-background-radius: 1em;
+    -fx-background-color: transparent, derive(-fx-control-inner-background, 20%), -fx-control-inner-background;
+    -fx-background-insets: 0, 1, 3;
+}
+
+.toggle-switch:hover .thumb {
+    -fx-color: -fx-hover-base;
+}
+
+.toggle-switch:selected .thumb-area {
+    -fx-background-color: -fx-background, -fx-accent;
+    -fx-background-insets: 0, 1;
+}
+
+.toggle-switch .thumb-area {
+    -fx-padding: 1em 1.6667em 1em 1.6667em; /* 7 16 7 16 */
+}
+
+.toggle-switch:disabled {
+    -fx-opacity: 0.4;
+}
+
+.button,
+.toggle-button,
+.radio-button > .radio,
+.check-box > .box,
+.choice-box,
+.color-picker.split-button > .color-picker-label,
+.combo-box-base,
+.combo-box-base:editable > .arrow-button,
+.button:focused,
+.toggle-button:focused,
+.radio-button:focused > .radio,
+.check-box:focused > .box,
+.choice-box:focused,
+.color-picker.split-button:focused > .color-picker-label,
+.combo-box-base:focused,
+.slider:focused .thumb {
+    -fx-background-color: -fx-body-color;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3;
+    -fx-padding: 0.2em 0.2em 0.2em 0.2em; /* 4 8 4 8 */
+}
+
+.button:focused,
+.toggle-button:focused,
+.radio-button:focused > .radio,
+.check-box:focused > .box,
+.menu-button:focused,
+.choice-box:focused,
+.color-picker.split-button:focused > .color-picker-label,
+.combo-box-base:focused,
+.slider:focused .thumb,
+.table-view > .virtual-flow > .clipped-container > .sheet > .table-row-cell > .check-box-table-cell > .check-box:focused > .box,
+.tree-table-view > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell > .check-box-table-cell > .check-box:focused > .box {
+    -fx-background-color: derive(-fx-body-color, 5%);
+}
+
+.text-input {
+    -fx-prompt-text-fill: derive(-fx-text-background-color, -50%);
+    -fx-background-color: -fx-control-inner-background;
+    -fx-background-insets: 0;
+}
+
+.text-input:focused {
+    -fx-background-color: derive(-fx-control-inner-background, 2%);
+}
+
+.button, .button:focused, .toggle-button, .toggle-button:focused, .toggle-button:focused:selected {
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 10em;
+    -fx-padding: 0.505em 1.505em;
+}
+
+.button:focused {
+    -fx-opacity: 0.9;
+}
+
+.toggle-button {
+    -fx-background-insets: 0, 2 !important;
+    -fx-background-color: -fx-toggle-button-border-color, -fx-body-color !important;
+}
+
+.toggle-button:selected, .toggle-button:focused:selected, .toggle-button:hover, .toggle-button:focused:hover {
+    -fx-toggle-button-border-color: -fx-accent;
+}
+
+.toggle-button, .toggle-button:focused, .toggle-button:selected:hover, .toggle-button:focused:selected:hover {
+    -fx-toggle-button-border-color: -fx-text-background-color;
+}
+
+Text {
+    -fx-fill: -fx-text-background-color;
+}
+
+.button:disabled ImageView {
+    -fx-opacity: 0.4;
+}
+
+.titled-pane > *.content {
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+    -fx-background-color: transparent;
+}
+
+.hyperlink {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: -fx-accent;
+    -fx-underline: inherit;
+}
+
+.hyperlink:focused {
+    -fx-border-width: 0;
+    -fx-opacity: 0.8;
+}
+
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-padding: 0.25em 0.625em;
+    -fx-shape: "M 0 0 l 5 5 l 5 -5 h -1 l -4 4 l -4 -4 z";
+}
+
+.titled-pane > .title {
+    -fx-font-size: 2em;
+    -fx-background-color: transparent !important;
+    -fx-padding: 0 12;
+}
+
+.accordion > .titled-pane > .title {
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: -fx-base;
+}
+
+.accordion > .first-titled-pane > .title {
+    -fx-border-width: 0;
+}
+
+.separator:vertical .line {
+    -fx-border-width: inherit;
+}
+
+.slider .thumb {
+    -fx-background-color: -fx-background, -fx-accent;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    -fx-padding: 0.583333em;  /* 7 */
+    -fx-effect: none;
+}
+
+.slider:focused .thumb {
+    -fx-background-color: -fx-background, -fx-accent;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    -fx-padding: 0.583333em;  /* 7 */
+    -fx-effect: none;
+}
+
+.slider .track {
+    -fx-background-color: -fx-base;
+    -fx-background-insets: none;
+    -fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
+    -fx-padding: 0.25em; /* 3 */
+}
+
+.slider:vertical .track {
+    -fx-background-color:
+            -fx-shadow-highlight-color,
+            -fx-text-box-border,
+            linear-gradient(to right,
+            derive(-fx-control-inner-background, -9%),
+            -fx-control-inner-background,
+            derive(-fx-control-inner-background, -9%)
+            );
+}
+
+.slider .axis {
+    -fx-tick-label-fill: derive(-fx-text-background-color, 30%);
+    -fx-tick-length: 5px;
+    -fx-minor-tick-length: 3px;
+    -fx-border-color: null;
+}
+
+.spinner, .spinner:focused, .spinner:contains-focus {
+    -fx-background-insets: 0;
+    -fx-background-radius: 3;
+}
+
+.spinner > .text-field, .spinner:focused > .text-field, .spinner:contains-focus > .text-field {
+    -fx-background-color: -fx-base;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3 0 0 3;
+}
+
+.spinner:focused > .text-field, .spinner:contains-focus > .text-field {
+    -fx-background-color: derive(-fx-base, 10%);
+}

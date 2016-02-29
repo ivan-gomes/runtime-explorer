@@ -1,0 +1,76 @@
+.type {
+    -fx-type-color: -fx-text-base-color;
+    -fx-fill: ladder(
+        -fx-background,
+        -fx-type-color                  49%,
+        -fx-text-background-color       50%
+    );
+}
+
+.type-primitive {
+    -fx-type-color: #808080;
+}
+
+.type-0 {
+    -fx-type-color: #629755;
+}
+
+.type-1 {
+    -fx-type-color: #CCDF32
+}
+
+.type-2 {
+    -fx-type-color: #84B977;
+}
+
+.type-3 {
+    -fx-type-color: #A9B7C6;
+}
+
+.type-4 {
+    -fx-type-color: #9876AA;
+}
+
+.type-5 {
+    -fx-type-color: #FFC66D;
+}
+
+.type-6 {
+    -fx-type-color: #6897BB;
+}
+
+.type-7 {
+    -fx-type-color: #A5C25C;
+}
+
+.type-8 {
+    -fx-type-color: #CC7832;
+}
+
+.type-9 {
+    -fx-type-color: #BBB529;
+}
+
+.type-10 {
+    -fx-type-color: #BED6FF;
+}
+
+.type-11 {
+    -fx-type-color: #79ABFF;
+}
+
+.type-12 {
+    -fx-type-color: #EFC090;
+}
+
+.type-13 {
+    -fx-type-color: #D25252;
+}
+
+.type-14 {
+    -fx-type-color: #7FB347;
+}
+
+.type-15 {
+    -fx-type-color: #BFA4A4;
+}
